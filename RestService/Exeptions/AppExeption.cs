@@ -1,29 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace RestService.Exeptions
 {
-    public class AppExeption:Exception
+    [Serializable]
+    public class AppExeption : Exception
     {
-        public AppExeption UserNotFound (string exMessage="Пользователь не найден.")
+        public AppExeption()
+        : base("Произошла непредвиденная ошибка, просим прощения за предоставленные неудобства. Мы работаем над этим.")
         {
-              throw new Exception(exMessage);
         }
-        public AppExeption PaymentException(string exMessage = "Недостаточно средств")
+        public AppExeption(string message)
+        : base(message = "Пользователь не найден.")
         {
-            throw new Exception(exMessage);
         }
-        public AppExeption ErrorService(Exception exception, string exMessage = "Произошла непредвиденная ошибка, просим прощения за предоставленные неудобства. Мы работаем над этим.")
+        public AppExeption(string message, Exception innerException)
+        : base(message, innerException)
         {
-            var message = exception.Message;
-            if (exception.TargetSite.DeclaringType.Name == "AppExeption")
-
+            if (innerException.GetType().Name != "AppExeption")
             {
-                throw new Exception(message);
+                throw new AppExeption("Произошла непредвиденная ошибка, просим прощения за предоставленные неудобства. Мы работаем над этим.");
             }
-            throw new Exception(exMessage);
         }
+        
     }
+
 }
+

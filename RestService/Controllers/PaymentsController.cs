@@ -20,6 +20,7 @@ namespace RestService.Controllers
         }
 
         [HttpGet("Balance")]
+        [CustomExceptionFilterAttribute]
         public IActionResult Balance(Guid? userId)
         {
             var data = _methods.GetBalanceByUser(userId.Value);
@@ -31,6 +32,7 @@ namespace RestService.Controllers
         }
 
         [HttpGet("History")]
+        [CustomExceptionFilterAttribute]
         public IActionResult History(Guid userId, DateTime? from, DateTime? to)
         {
             var data = _methods.HistoryTransaction(userId, from, to);
@@ -43,6 +45,7 @@ namespace RestService.Controllers
         }
 
         [HttpPost("AddTransaction")]
+        [CustomExceptionFilterAttribute]
         public IActionResult AddTransaction(DateTime transactionTime, Guid userId, string notes, decimal amount)
         {
             if (string.IsNullOrWhiteSpace(notes)) { return NotFound("Не указан комментарий"); }
@@ -57,6 +60,7 @@ namespace RestService.Controllers
 
 
         [HttpGet("Statistic")]
+        [CustomExceptionFilterAttribute]
         public IActionResult Statistic(DateTime? onDate)
         {
             var data = _methods.GetStatisticByDate(onDate);

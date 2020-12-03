@@ -19,18 +19,20 @@ namespace RestService.Repositories
             _context = db;
         }
         public decimal? GetBalanceByUser(Guid userId)
-        {
+        {            
             try
             {
-                var user = _context.Users.FirstOrDefault(w => w.UserId == userId);
-                return user == null ? 0 : user.Amount;
+                var user = _context.Users.FirstOrDefault(w => w.UserId == userId).Amount;
+                if (user == null) { throw new AppExeption("Пользователь не найден"); }
+                return user;//.Amount;
             }
             catch (Exception exc)
             {
-                new AppExeption().ErrorService(exc);
+                throw new AppExeption(exc.Message, exc);
                 return 0;
             }
         }
+
         public List<PaymentTransaction> HistoryTransaction(Guid userId, DateTime? from, DateTime? to)
         {
             try
@@ -40,11 +42,12 @@ namespace RestService.Repositories
                     && (from != null ? w.TransactionTime >= from : true)
                     && (from != null ? w.TransactionTime >= to : true))
                     .ToList();
+                if (rezult.Count == 0) { throw new AppExeption("История операция по заданным параметрам не найдена."); }
                 return rezult;
             }
             catch (Exception exc)
             {
-                new AppExeption().ErrorService(exc);
+                throw new AppExeption(exc.Message, exc);
                 return new List<PaymentTransaction>();
             }
         }
@@ -58,7 +61,7 @@ namespace RestService.Repositories
                 {
                     if ((user.Amount - amount) <= 0)
                     {
-                        new AppExeption().PaymentException();
+                        throw new AppExeption("Недостаточно средств на счету.");
                     }
                     transaction = new PaymentTransaction(transactionTime, userId, notes, amount);
                     _context.Transactions.Add(transaction);
@@ -67,13 +70,13 @@ namespace RestService.Repositories
                 }
                 else
                 {
-                    new AppExeption().UserNotFound();
+                    throw new AppExeption("Пользователь не найден");
                 }
                 return "Транзакция успешна. Ид транзакции: " + transaction.TransactionId;
             }
             catch (Exception exc)
             {
-                new AppExeption().ErrorService(exc);
+                throw new AppExeption(exc.Message,exc);
                 return "";
             }
         }
@@ -95,13 +98,13 @@ namespace RestService.Repositories
                     }).ToList();
                 if (rezults.Count == 0)
                 {
-                    new AppExeption().UserNotFound("За данную дату ничего не найдено.");
+                    throw new AppExeption("За данную дату ничего не найдено.");
                 }
                 return rezults;
             }
             catch (Exception exc)
             {
-                new AppExeption().ErrorService(exc);
+                throw new AppExeption(exc.Message, exc);
                 return new List<StatisticView>();
             }
         }
