@@ -83,20 +83,20 @@ namespace RestService.Repositories
         {
             try
             {
-                var rezults = _context.Users
-                    .Join(_context.Transactions
-                    .Where(w => (onDate != null ? w.TransactionTime == onDate : true)),
-                    u => u.UserId,
-                    t => t.UserId,
-                    (u, t) => new { User = u, Transactions = t })
-                    .AsEnumerable().GroupBy(g => g.User)
+                var rezults = _context.Transactions
+                    .Where(w => (onDate != null ? w.TransactionTime == onDate : true))
                     .Select(s =>
                     new StatisticView()
                     {
-                        User = s.Key,
-                        Transactions = s.Select(s => s.Transactions).ToList()
+                        FIO = s.User.Family + s.User.Name + s.User.Patronymic,
+                        Amount = s.Amount,
+                        Notes = s.Notes,
+                        TransactionTime = s.TransactionTime
                     }).ToList();
-                if (rezults.Count == 0) { new AppExeption().UserNotFound("За данную дату ничего не найдено."); }
+                if (rezults.Count == 0)
+                {
+                    new AppExeption().UserNotFound("За данную дату ничего не найдено.");
+                }
                 return rezults;
             }
             catch (Exception exc)

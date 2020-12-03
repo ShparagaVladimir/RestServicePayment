@@ -17,9 +17,11 @@ namespace RestService.Exeptions
         }
         public AppExeption ErrorService(Exception exception, string exMessage = "Произошла непредвиденная ошибка, просим прощения за предоставленные неудобства. Мы работаем над этим.")
         {
+            var message = exception.Message;
             if (exception.TargetSite.DeclaringType.Name == "AppExeption")
+
             {
-                throw new Exception (exception.Message);
+                throw new Exception(message);
             }
             throw new Exception(exMessage);
         }

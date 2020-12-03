@@ -8,7 +8,21 @@ namespace RestService.ViewModels
 {
     public class StatisticView
     {
-        public User User { get; set; }
-        public List<PaymentTransaction> Transactions { get; set; }
+        /// <summary>
+        /// ФИО пользователя
+        /// </summary>
+        public string FIO { get; set; }
+        /// <summary>
+        /// Дата транзакции
+        /// </summary>
+        public DateTime TransactionTime { get; set; }
+        /// <summary>
+        /// Комментарий
+        /// </summary>        
+        public string Notes { get; set; }
+        /// <summary>
+        /// Сумма транзакции
+        /// </summary>
+        public decimal Amount { get; set; }
     }
 }
