@@ -8,7 +8,7 @@ namespace RestService.AppContexts
     {
         public DB_Context(DbContextOptions<DB_Context> options) : base(options)
         {
-
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
         }
         public DbSet<User> Users { get; set; }
@@ -31,8 +31,8 @@ namespace RestService.AppContexts
               new PaymentTransaction[]
               {
                 new PaymentTransaction { UserId=new System.Guid("5E69707B-5A13-4361-99D8-CAACEE037C06"), TransactionTime=DateTime.Now, Notes="Ботинки",Amount=3500,TransactionId = Guid.NewGuid()},
-                new PaymentTransaction { UserId=new System.Guid("5E69707B-5A13-4361-99D8-CAACEE037C06"),TransactionTime=DateTime.Now, Notes ="Магазин" ,Amount=5000,TransactionId = Guid.NewGuid()},
-                new PaymentTransaction { UserId=new System.Guid("5E69707B-5A13-4361-99D8-CAACEE037C06"), TransactionTime=DateTime.Now,Notes="SSD",Amount=5000,TransactionId = Guid.NewGuid()},
+                new PaymentTransaction { UserId=new System.Guid("5E69707B-5A13-4361-99D8-CAACEE037C06"),TransactionTime=DateTime.Now.AddDays(1), Notes ="Магазин" ,Amount=5000,TransactionId = Guid.NewGuid()},
+                new PaymentTransaction { UserId=new System.Guid("5E69707B-5A13-4361-99D8-CAACEE037C06"), TransactionTime=DateTime.Now.AddDays(2),Notes="SSD",Amount=5000,TransactionId = Guid.NewGuid()},
 
               });
         }

@@ -21,7 +21,7 @@ namespace RestService.Interface
         /// <param name="from">Дата с</param>
         /// <param name="to">Дата по</param>
         /// <returns></returns>
-        List<PaymentTransaction> HistoryTransaction(Guid userId, DateTime? from, DateTime? to);
+        List<TransactionView> HistoryTransaction(Guid userId, DateTime? from, DateTime? to);
         /// <summary>
         /// Транзакция(Списание средств)
         /// </summary>
@@ -36,6 +36,6 @@ namespace RestService.Interface
         /// </summary>
         /// <param name="onDate">Дата за которую предоставить отчет</param>
         /// <returns></returns>
-        List<StatisticView> GetStatisticByDate(DateTime? onDate);
+        List<TransactionView> GetStatisticByDate(DateTime? onDate);
     }
 }

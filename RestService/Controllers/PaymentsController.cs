@@ -4,6 +4,7 @@ using RestService.Models;
 using RestService.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,10 +25,7 @@ namespace RestService.Controllers
         public IActionResult Balance(Guid? userId)
         {
             var data = _methods.GetBalanceByUser(userId.Value);
-            if (data == 0)
-            {
-                return NotFound(userId);
-            }
+            
             return Ok(data);
         }
 
@@ -36,24 +34,20 @@ namespace RestService.Controllers
         public IActionResult History(Guid userId, DateTime? from, DateTime? to)
         {
             var data = _methods.HistoryTransaction(userId, from, to);
-            if (data.Count == 0)
-            {
-                return NotFound(userId);
-            }
+            
             return Ok(data);
 
         }
 
         [HttpPost("AddTransaction")]
         [CustomExceptionFilterAttribute]
+        
         public IActionResult AddTransaction(DateTime transactionTime, Guid userId, string notes, decimal amount)
         {
+           
             if (string.IsNullOrWhiteSpace(notes)) { return NotFound("Не указан комментарий"); }
             var data = _methods.CreateTransaction(transactionTime, userId, notes, amount);
-            if (string.IsNullOrEmpty(data))
-            {
-                return NotFound(userId);
-            }
+           
             return Ok(data);
 
         }
@@ -63,11 +57,7 @@ namespace RestService.Controllers
         [CustomExceptionFilterAttribute]
         public IActionResult Statistic(DateTime? onDate)
         {
-            var data = _methods.GetStatisticByDate(onDate);
-            if (data.Count == 0)
-            {
-                return NotFound(onDate);
-            }
+            var data = _methods.GetStatisticByDate(onDate);            
             return Ok(data);
 
         }

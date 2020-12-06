@@ -14,7 +14,7 @@ namespace RestService.Exeptions
         {
         }
         public AppExeption(string message)
-        : base(message = "Пользователь не найден.")
+        : base(message)
         {
         }
         public AppExeption(string message, Exception innerException)

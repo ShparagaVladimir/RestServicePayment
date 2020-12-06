@@ -163,8 +163,6 @@ E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\RestServiceTest.ru
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\RestServiceTest.runtimeconfig.dev.json
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\RestServiceTest.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\RestServiceTest.pdb
-E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
-E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\EntityFramework.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.TestHost.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -197,11 +195,9 @@ E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\Microsoft.VisualSt
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\testhost.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\System.CodeDom.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
@@ -285,11 +281,6 @@ E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win-x64\n
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\RestServicePayment\RestServiceTest\bin\Debug\netcoreapp3.1\RestService.dll

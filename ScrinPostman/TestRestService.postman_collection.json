@@ -1,0 +1,174 @@
+{
+	"info": {
+		"_postman_id": "edffb902-2541-40c7-bc35-85a82f6ceca5",
+		"name": "TestRestService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "BlanseUserNotFound",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BlanseUserFound",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statistic User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statistic User All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Statistic User All Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "History No Parametr",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTransaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44311/api/AddTransaction?transactionTime=2020-12-12 &userId=5E69707B-5A13-4361-99D8-CAACEE037C06&amount=500&notes=Флешка",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44311",
+					"path": [
+						"api",
+						"AddTransaction"
+					],
+					"query": [
+						{
+							"key": "transactionTime",
+							"value": "2020-12-12 "
+						},
+						{
+							"key": "userId",
+							"value": "5E69707B-5A13-4361-99D8-CAACEE037C06"
+						},
+						{
+							"key": "amount",
+							"value": "500"
+						},
+						{
+							"key": "notes",
+							"value": "Флешка"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddTransaction No all parametr",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44311/api/AddTransaction?transactionTime=2020-12-12 &userId=5E69707B-5A13-4361-99D8-CAACEE037C06&notes=sdfsdf&amount=4501",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44311",
+					"path": [
+						"api",
+						"AddTransaction"
+					],
+					"query": [
+						{
+							"key": "transactionTime",
+							"value": "2020-12-12 "
+						},
+						{
+							"key": "userId",
+							"value": "5E69707B-5A13-4361-99D8-CAACEE037C06"
+						},
+						{
+							"key": "notes",
+							"value": "sdfsdf"
+						},
+						{
+							"key": "amount",
+							"value": "4501"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

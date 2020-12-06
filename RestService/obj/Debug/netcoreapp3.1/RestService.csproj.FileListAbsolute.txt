@@ -81,8 +81,6 @@ E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\RestService.runtimecon
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\RestService.runtimeconfig.dev.json
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\RestService.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\RestService.pdb
-E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
-E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\EntityFramework.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\Humanizer.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.TestHost.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -107,11 +105,9 @@ E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\Microsoft.IdentityMode
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\System.CodeDom.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
@@ -126,18 +122,11 @@ E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win-x64\nativ
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\RestServicePayment\RestService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.csprojAssemblyReference.cache
 E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.AssemblyInfoInputs.cache
 E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.AssemblyInfo.cs
-E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.csproj.CoreCompileInputs.cache
-E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.MvcApplicationPartsAssemblyInfo.cache
 E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.RazorTargetAssemblyInfo.cache
 E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.csproj.CopyComplete
 E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\staticwebassets\RestService.StaticWebAssets.Manifest.cache
@@ -145,3 +134,5 @@ E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\staticwebassets\RestSe
 E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.dll
 E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.pdb
 E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.genruntimeconfig.cache
+E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.csproj.CoreCompileInputs.cache
+E:\RestServicePayment\RestService\obj\Debug\netcoreapp3.1\RestService.MvcApplicationPartsAssemblyInfo.cache

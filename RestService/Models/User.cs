@@ -33,5 +33,10 @@ namespace RestService.Models
         public decimal Amount { get; set; }
 
         public virtual List<PaymentTransaction> Transactions { get; set; } = new List<PaymentTransaction>();
+
+        public string getUserFIO()
+        {
+            return Family + " " +Name + " " +Patronymic;
+        }
     }
 }
