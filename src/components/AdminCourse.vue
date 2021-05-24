@@ -1,12 +1,11 @@
 <template>
   <div>
-    <v-row class="ml-15 mt-0"
-      >
+    <v-row no-gutters class="ml-15 mt-5">
       <v-btn depressed color="green" @click="addElement, (dialogBlock = true)"
         >Добавить блок</v-btn
       >
     </v-row>
-    <v-dialog    max-width="600" v-model="dialogBlock">
+    <v-dialog max-width="600" v-model="dialogBlock">
       <v-card>
         <v-card-title class="headline">
           Заполните данные для добавления ответа
@@ -20,10 +19,20 @@
             v-model="blockModel.name"
           ></v-text-field>
           <v-row>
-              <v-spacer></v-spacer>
-              <v-btn color="primary" @click="blockModel.childrens.push(Object.assign({},childrenModel))">Добавить раздел</v-btn>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="primary"
+              @click="
+                blockModel.childrens.push(Object.assign({}, childrenModel))
+              "
+              >Добавить раздел</v-btn
+            >
           </v-row>
-          <v-col class="sm-2" v-for="children in blockModel.childrens" :key="children">
+          <v-col
+            class="sm-2"
+            v-for="children in blockModel.childrens"
+            :key="children"
+          >
             <v-text-field
               filled
               dense
@@ -39,13 +48,17 @@
           <v-btn color="primary darken-1" text @click="dialogBlock = false">
             Отмена
           </v-btn>
-          <v-btn color="green darken-1" text @click="dialogBlock = false, block.push(blockModel)">
+          <v-btn
+            color="green darken-1"
+            text
+            @click="(dialogBlock = false), block.push(blockModel)"
+          >
             Добавить
           </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
-    <v-container class="ml-0 mr-0">
+    <v-container class="ml-0 mr-0" style="max-width:1350px">
       <v-layout row wrap>
         <v-flex xs2>
           <v-div flat>
@@ -60,6 +73,12 @@
                 <v-row class="pt-1">
                   <v-btn class="md" depressed color="primary">
                     {{ item.name }}
+                    <v-icon
+                      class="pl-1"
+                      @click="(dialogBlock = true), (blockModel = item)"
+                      >mdi-pencil</v-icon
+                    >
+                    <v-icon class="pl-1">mdi-delete</v-icon>
                   </v-btn>
                 </v-row>
                 <v-div v-if="item.childrens.length != 0">
@@ -75,7 +94,14 @@
                         (content = children.html), (htmlChildren = children)
                       "
                     >
-                      {{ children.name }}
+                      {{ children.name
+                      }}<v-icon
+                        class="pl-1"
+                        @click="(dialogBlock = true), (blockModel = children)"
+                        >mdi-pencil</v-icon
+                      ><v-icon class="pl-1" @click="dialogDelete=true"
+                        >mdi-delete</v-icon
+                      >
                     </v-btn>
                   </v-row>
                 </v-div>
@@ -83,8 +109,8 @@
             </v-timeline>
           </v-div>
         </v-flex>
-        <v-flex xs1></v-flex>
-        <v-flex xs9>
+        <v-flex xs2></v-flex>
+        <v-flex xs8 style="padding-left:65px">
           <quill-editor
             :content="content"
             :options="editorOption"
@@ -93,16 +119,28 @@
         </v-flex>
       </v-layout>
     </v-container>
-    <v-row>
+    <v-row no-gutters>
       <v-spacer></v-spacer>
       <v-btn
         v-if="htmlChildren.html != content"
-        depressed
+        class="mr-5"
         color="success"
         @click="saveChanges"
         >Сохранить изменения</v-btn
       >
     </v-row>
+    <v-dialog v-model="dialogDelete" max-width="600px">
+      <v-card>
+        <v-card-title>Вы уверены что хотите удалить запись?</v-card-title>
+        <v-card-actions>
+          <v-row no-gutters>
+            <v-spacer></v-spacer>
+            <v-btn color="primary">Отмена</v-btn>
+            <v-btn color="green">Да</v-btn>
+          </v-row>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -118,6 +156,8 @@ export default {
     quillEditor,
   },
   data: () => ({
+    dialogDelete: false,
+
     dialogBlock: false,
     content: "",
     editorOption: {

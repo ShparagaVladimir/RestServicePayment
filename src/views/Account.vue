@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <h1>Аккаунт</h1>
-    <v-card class="mx-auto" max-width="800" color="#edeff1" outlined>
+    <!-- <v-card class="mx-auto" max-width="800" color="#edeff1" outlined>
       <div class="row">
         <div class="col-auto">
           <v-img
@@ -10,7 +10,7 @@
             max-height="250"
             max-width="250"
             style="margin='5px'"
-            src="https://cdn.vuetifyjs.com/images/john.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ86FKyBDVz7z-HykV_HJDAvVIRYG251rwQhw&usqp=CAU"
           ></v-img>
         </div>
         <div>
@@ -49,14 +49,23 @@
           <v-row>
             <v-col>
               <v-text-field
-                v-model="user.departament"
+                v-model="user.razryad"
                 label="Разряд"
+                required
+              ></v-text-field> </v-col
+          ></v-row>
+          <v-row>
+            <v-col>
+              <v-text-field
+                v-model="user.role"
+               
+                label="Роль"
                 required
               ></v-text-field> </v-col
           ></v-row>
         </div>
       </div>
-    </v-card>
+    </v-card> -->
     <v-card class="mt-5">
       <v-card-title>
         <v-text-field
@@ -70,7 +79,12 @@
           Добавить пользователя
         </v-btn>
       </v-card-title>
-      <v-data-table :headers="headers" :items="desserts" :search="search">
+      <v-data-table
+        :headers="headers"
+        :items="desserts"
+        :search="search"
+        style="margin:5px"
+      >
         <template v-slot:item.actions="{ item }">
           <v-icon small class="mr-2" @click="editItem(item)">
             mdi-pencil
@@ -82,10 +96,9 @@
       </v-data-table>
     </v-card>
     <v-dialog v-model="dialog" max-width="500px">
-      
       <v-card>
         <v-card-title>
-          <span class="headline">{{ formTitle }}</span>
+          <span class="headline">{{ `Добавление пользователя` }}</span>
         </v-card-title>
 
         <v-card-text>
@@ -93,21 +106,46 @@
             <v-row>
               <v-col cols="12" sm="6" md="4">
                 <v-text-field
-                  v-model="editedItem.fio"
-                  label="ФИО"
+                  v-model="editedItem.family"
+                  label="Фамилия"
                 ></v-text-field>
               </v-col>
               <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="editedItem.fName"
+                  label="Имя"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="4">
+                <v-text-field
+                  v-model="editedItem.lName"
+                  label="Отчество"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="6">
                 <v-text-field
                   v-model="editedItem.email"
                   label="Email"
                 ></v-text-field>
               </v-col>
-              <v-col cols="12" sm="6" md="4">
+              <v-col cols="12" sm="6" md="6">
                 <v-text-field
                   v-model="editedItem.login"
                   label="Логин"
                 ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="6">
+                <v-text-field
+                  v-model="editedItem.razryad"
+                  label="Разряд"
+                ></v-text-field>
+              </v-col>
+              <v-col cols="12" sm="6" md="6">
+                <v-select
+                  :items="roles"
+                  v-model="editedItem.role"
+                  label="Роль"
+                ></v-select>
               </v-col>
             </v-row>
           </v-container>
@@ -117,7 +155,7 @@
           <v-btn color="blue darken-1" text @click="dialog = false">
             Отмена
           </v-btn>
-          <v-btn color="blue darken-1" text @click="save">
+          <v-btn color="success darken-1" text @click="save">
             Сохранить
           </v-btn>
         </v-card-actions>
@@ -129,9 +167,10 @@
 import store from "../store";
 export default {
   data: () => ({
+    roles: ["Администратор", "Обучающийся"],
     search: "",
     dialog: false,
-    editedItem: { fio: "", login: "", email: "",dateIn:"" },
+    editedItem: { fio: "", login: "", email: "", dateIn: "" },
     headers: [
       {
         text: "ФИО",
@@ -141,6 +180,8 @@ export default {
       },
       { text: "Email", value: "email" },
       { text: "Логин", value: "login" },
+      { text: "Разряд", value: "razryad" },
+      { text: "Роль", value: "role" },
       { text: "Дата входа", value: "dateIn" },
       { text: "", value: "actions" },
     ],
@@ -149,7 +190,9 @@ export default {
         fio: "Тестовый пользователь",
         email: "email@.com",
         login: "testUser",
+        razryad: 3,
         dateIn: new Date().toLocaleString(),
+        role:"Администратор"
       },
     ],
     user: {},
@@ -162,6 +205,8 @@ export default {
       this.user = Object.assign({}, store.getters.userModel);
     },
     editItem(item) {
+      this.dialog = true;
+      this.editItem = item;
       console.log(item);
     },
     deleteItem(item) {

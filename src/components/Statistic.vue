@@ -72,6 +72,7 @@ export default {
         email: "email@.com",
         courseComplete: 1,
         average: 88,
+        login:"testUser",
         dateIn: new Date().toLocaleString(),
       },
     ],

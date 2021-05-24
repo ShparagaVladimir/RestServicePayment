@@ -1,6 +1,7 @@
 <template>
   <div>
-    <v-row class="mb-1 mr-1">
+    <h1>Тестирование курса "Арготроник"</h1>
+    <v-row class="mb-2 mt-2 mr-2" no-gutters>
       <v-spacer></v-spacer>
       <v-btn depressed color="primary" @click="dialogAddQuestion = true "
         >Добавить</v-btn
@@ -125,7 +126,7 @@
         </v-card-text>
       </v-card>
     </v-col>
-     <v-row class="mr-5 mt-0"
+     <v-row class="mr-5 mb-2" no-gutters
           ><v-spacer></v-spacer>
           <v-btn depressed color="green" @click="saveChanges"
             >Сохранить все изменеия</v-btn
